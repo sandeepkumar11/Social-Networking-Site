@@ -1,15 +1,40 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block title %}SignUp{% endblock title %}
 
 {% block main_content %}
-  <div class="container">
-      <h1>Sign Up</h1>
-      <form action="" method="POST">
-          {% csrf_token %}
-          {% bootstrap_form form %}
-          <input type="submit" class="btn btn-primary" value="Sign Up">
-      </form>
+ <div class="container">
+      <div class="row my-3 justify-content-around">
+          <div class="col-sm-6">
+              <form style="background-color: rgb(34, 32, 32);" class="my-2 p-3 rounded" action="" method="POST">
+                  {% csrf_token %}
+                  <div class="row justify-content-around mt-3">
+                      <div class="col-sm-6">
+                          <h3 class="text-white font-weight-bold text-center">Create Account</h3>
+                      </div>
+                  </div>
+                  {% if messages %}
+                    {% for message in messages %}
+                       <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                         <strong>{{message}}</strong>
+                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                       </div>
+                    {% endfor %}
+                  {% endif %}
+                  {% for fm in form %}
+                  <div class="mb-3 text-white">
+                     {{fm.label_tag}}
+                     {{fm}}
+                     <small class="text-danger">{{fm.errors|striptags}}</small>
+                  </div>
+                  {% endfor %}
+                  
+                  <div class="row justify-content-around  ">
+                    <input type="submit" value="Continue" class="col-md-10  col-sm-10 col-10 col-lg-10 btn btn-primary mt-3">
+                    <a href="{% url 'login' %}" class="click__link mt-3 text-center">Already have an account? Sign in</a>
+                  </div>
+              </form>
+          </div>
+      </div>
   </div>
 {% endblock main_content %}

@@ -81,11 +81,13 @@ WSGI_APPLICATION = 'SocialNetwork.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Django',
-        'USER':'postgres',
-        'PASSWORD':'Skl!*@&#^$%',
-        'HOST':'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'Django',
+        # 'USER':'postgres',
+        # 'PASSWORD':'Skl!*@&#^$%',
+        # 'HOST':'localhost'
     }
 }
 
@@ -129,5 +131,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
-LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'

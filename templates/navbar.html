@@ -1,39 +1,36 @@
-<nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark mynav">
-  <a class="navbar-brand font-weight-bold mynav" href="{% url 'home' %}">SANAWAL</a>
+<nav class="sticky-top navbar navbar-expand-lg navbar-dark mynav">
+  <a class="navbar-brand mynav text-info" href="{% url 'home' %}"><h3>MYSITE</h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      {% comment %} <li class="nav-item active">
-        <a class="nav-link" href="{% url 'LogInOut:home' %}">Home <span class="sr-only">(current)</span></a>
-      </li> {% endcomment %}
       {% if user.is_authenticated %}
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'posts:create' %}">Posts</a>
+        <a class="nav-link text-light font-weight-bold" href="{% url 'posts:create' %}">Posts</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
+        <a class="nav-link text-light font-weight-bold" href="{% url 'groups:all' %}">Groups</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'groups:create' %}"> Create Group</a>
+        <a class="nav-link text-light font-weight-bold" href="{% url 'groups:create' %}"> Create Group</a>
       </li>
     </ul>
 
     <div class="my-2 my-lg-0">
-        <a class="mr-sm-2 text-light" href="{% url 'accounts:logout' %}">Logout</a>
+        <a class="mr-sm-2 text-light font-weight-bold" href="{% url 'accounts:logout' %}">Logout</a>
     </div>
     {% else %}
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-           <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
+           <a class="nav-link text-light font-weight-bold" href="{% url 'groups:all' %}">Groups</a>
         </li>
     </ul>
     <div class="my-2 my-lg-0">
-        <a class="mr-sm-2 text-light" href="{% url 'accounts:login' %}">Login</a>
+        <a class="mr-sm-2 text-light font-weight-bold" href="{% url 'accounts:login' %}">Login</a>
     </div>
     <div class="my-2 my-lg-0">
-        <a class="my-2 my-sm-0 text-light" href="{% url 'accounts:signup' %}">Sign Up</a>
+        <a class="my-2 my-sm-0 text-light font-weight-bold" href="{% url 'accounts:signup' %}">Sign Up</a>
     </div>
     {% endif %}
   </div>
