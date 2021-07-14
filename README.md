@@ -43,4 +43,4 @@ Join / Leave Group
 
 
 Group List
-![](Screenshot/9GroupList.png)
+![](Screenshot/9GroupsList.png)
