@@ -1,5 +1,5 @@
-<nav class="sticky-top navbar navbar-expand-lg navbar-dark mynav">
-  <a class="navbar-brand mynav text-info" href="{% url 'home' %}"><h3>MYSITE</h3></a>
+<nav class="menu sticky-top navbar navbar-expand-lg navbar-dark mynav">
+  <a class="navbar-brand mynav text-info ml-3" href="{% url 'home' %}"><h3>MYSITE</h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,3 +35,7 @@
     {% endif %}
   </div>
 </nav>
+
+<div class="row justify-content-around fixed-bottom navbar-light bg-info">
+        <a class="navbar-brand text-center" href="#">&copy; SocialNetwork</a>
+</div>

@@ -1,7 +1,7 @@
 {% extends "posts/post_base.html" %}
 
 {% load bootstrap4 %}
-
+{% block title %}Post Form{% endblock title %}
 {% block post_content %}
 <h4 class="mt-3">Create New Post</h4>
 <form class="m-5" method="POST" action="{% url 'posts:create' %}" id="postForm">
